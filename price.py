@@ -1,5 +1,10 @@
 def shopping(shop_file):
     shop_dict = {} # 생성할 사전 객체
+    from pathlib import Path
+    from urllib.request import urlretrieve
+
+    data_path = Path() / "data"
+    data_path.mkdir(parents=True, exist_ok=True)
 
     with open(data_path / shop_file, mode='r', encoding='utf-8') as f:    
       for line in f:
